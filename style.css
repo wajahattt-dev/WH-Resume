@@ -277,6 +277,9 @@ html, body {
 
 /* ---------- PRINT ---------- */
 @media print {
+  html{
+    zoom: 0.82;
+  }
   body { background: #fff; }
   .print-btn { display: none; }
   .page {
