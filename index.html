@@ -279,9 +279,87 @@
 
   /* ---------- PRINT ---------- */
   @media print {
-    body { background: #fff; padding: 0; }
+    @page { size: A4; margin: 0; }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      background: #fff;
+      padding: 0;
+      margin: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+    }
+
     .print-btn { display: none; }
-    .page { box-shadow: none; border-radius: 0; max-width: 100%; }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-width: none;
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+      flex-wrap: nowrap;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 72mm;
+      flex: 0 0 72mm;
+      padding: 9mm 7mm;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .main { flex: 1 1 auto; }
+
+    .banner {
+      padding: 9mm 9mm 6mm;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .banner h1 { font-size: 1.7rem; }
+    .banner .title { font-size: 0.9rem; margin-top: 5px; }
+
+    .content { padding: 6mm 9mm 8mm; }
+
+    .photo-circle { width: 105px; height: 105px; }
+    .photo-circle span { font-size: 1.6rem; }
+    .photo-wrap { margin-bottom: 16px; }
+
+    .summary { font-size: 0.7rem; line-height: 1.5; margin-bottom: 16px; }
+
+    .contact-list li { font-size: 0.68rem; margin-bottom: 9px; gap: 8px; }
+    .icon-badge {
+      width: 22px;
+      height: 22px;
+      font-size: 0.65rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .side-section { margin-top: 16px; }
+    .side-section h3 { font-size: 0.62rem; padding: 5px 10px; margin-bottom: 8px; }
+    .plain-list li { font-size: 0.68rem; margin-bottom: 5px; }
+
+    .block { margin-bottom: 14px; }
+    .block-title {
+      font-size: 0.78rem;
+      padding: 5px 16px;
+      margin-bottom: 10px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .entry { margin-bottom: 10px; page-break-inside: avoid; break-inside: avoid; }
+    .entry h3 { font-size: 0.82rem; }
+    .entry-sub { font-size: 0.72rem; margin-top: 2px; }
+    .entry-date { font-size: 0.62rem; margin-top: 2px; margin-bottom: 5px; }
+    .entry-desc { font-size: 0.72rem; margin-bottom: 6px; line-height: 1.4; }
+    .bullets { padding-left: 15px; }
+    .bullets li { font-size: 0.71rem; margin-bottom: 3px; line-height: 1.4; }
   }
 </style>
 </head>
@@ -294,9 +372,9 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="photo-wrap">
-      <div class="photo-circle">
-     <img src="photo.jpg" alt="Wajahat Hussain">
-   </div>
+      <div class="photo-circle" aria-hidden="true">
+        <span>WH</span>
+      </div>
     </div>
 
     <p class="summary">
