@@ -75,6 +75,7 @@ This is a static site, so any static host works. Free options:
 | **Netlify** | Drag the folder into app.netlify.com/drop |
 
 ## 📬 Contact
+Wajahat Hussain Sangi
 
 - **Email:** wajahattt.hussain@gmail.com
 - **Phone:** +92-349-7384179
